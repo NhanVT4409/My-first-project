@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var op = prompt("mời bạn nhập :  ");
+switch(op){
+  case "1":
+  alert("bai 1 :");
+      var ng = prompt("Mời nhập ngày  =  ");
+      while(!(ng>0 && ng<32)){
+          alert("mot thang co nhieu nhat 31 ngay thoi !");
+          var ng = prompt("nhap lai ngay =  ");
+      }
+      var t = prompt(" Mời nhập tháng =  ");
+      while(!(t>0 && t<=12)){
+          alert("mot nam co nhieu nhat 12 thang tu 1-12 thoi !");
+          var t = prompt("nhap lai thang =  ");	
+      }
+      var n = prompt("Mời nhập năm =  ");
+      while(!(n>=1)){
+          alert("khong ton tai nam am !");
+          var n = prompt("nhap lai nam =  ");	
+      }
+      if(t==4||t==6||t==9||t==11){
+          while(!(ng>0 && ng<31)){
+              alert("thang "+t+" co nhieu nhat 30 ngay thoi !");
+              var ng = prompt("nhap lai ngay =  ");		
+          }
+      }
+      var nhuan = n%4==0 && n%100!=0||n%400==0?true:false;
+      if(t==2 && nhuan==false){
+          while(!(ng>0 && ng<29)){
+              alert("nam "+n+" ko phai nam nhuan nen thang 2 co nhieu nhat 28 ngay thoi !");
+              var ng = prompt("nhap lai ngay =  ");		
+          }	
+      }
+      alert("ban nhap : "+ng+"/"+t+"/"+n);
+  break;
+  
+  case "2":
+  alert("Bài 2 :");
+      var n = prompt("user =  ");
+      var m = prompt("pass =  ");
+      while(!(n == "abc" && m == "abc")){
+          var n = prompt("nhap lai user =  ");
+          var m = prompt("nhap lai pass =  ");
+      }
+      alert("Dang nhap thanh cong ? Xin chào !");
+  break;
+  case "3":
+  alert("Bai 3 :");
+              var n = prompt("n =  ");
+              var mang1 = new Array(eval(n))
+              for (var i = 0; i < n; i++) {
+                  mang1[i] = prompt("gia tri =  ");
+              }
+              var a = prompt("gia tri them =  ");
+              mang1.push(a)
+              for (tm in mang1) {
+                  document.write(mang1[tm] + " ")
+              }
+              document.write("<br> sap xep lai")
+              mang1.sort()
+              for (tm in mang1) {
+                  document.write(mang1[tm] + " ")
+              }
+  
+  break;
+  case "4":
+  alert("Bai 4 :");
+              var n = prompt("n =  ");
+              var mang1 = new Array(eval(n))
+              for (var i = 0; i < n; i++) {
+                  mang1[i] = prompt("gia trị nhập  =  ");
+              }
+              var b = prompt("vi tri xoa =  ");
+              mang1.splice(b, 1)
+              for (tm in mang1) {
+                  document.write(mang1[tm] + " ")
+              }
+      break;
+  case "5":
+  alert("Bai 5 :");
+      var a = prompt("canh a =  ");
+      var b = prompt("canh b =  ");
+      var c = prompt("canh c =  ");
+var v = a*a == b*b + c*c || a*a + b*b == c*c || b*b == a*a + c*c?true:false;
+      var can = a==b || b==c || a==c?true:false;
+      if(a == b && b == c){
+          alert("la tam giac deu");
+      }else if(can){
+          alert("la tam giac can");
+      }else if(v){
+          alert("la tam giac vuong");
+      }else if(v && can){
+          alert("la tam giac vuong can");
+      }else{
+          alert("la tam giac thuong");
+      }
+      break;
+}
+</script>
+</body>
+</html>
